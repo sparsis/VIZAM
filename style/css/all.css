@@ -1,0 +1,43 @@
+/*####################################################			ADMIN		#####################################################*/
+/*tabelas*/
+.table th { text-align:center;  margin:0;}
+.table td { text-align:center; padding-left:2px; padding-right:2px; margin:0;}
+caption { font:20px "Trebuchet MS", Arial, Helvetica, sans-serif; padding:5px;}
+legend { font:20px "Trebuchet MS", Arial, Helvetica, sans-serif; padding:5px; }
+
+/*graficos*/
+#chart_divDois {height:200px; float:left;border:3px solid #CCC; margin-bottom:15px; padding:0;}
+#chart_div {border:3px solid #CCC;}
+
+/* galeria */
+.gblist{float:left; width:560px; margin:5px 0 0 0; list-style:none; display:inline;}
+.gblist .last{float:right; margin-right:0;}
+.gblist .action{position:absolute; left:2px; top:2px; padding:30px 5px 14px; background:rgba(0,0,0,0.5);}
+.gblist .action{width:75px; text-align:center; display:none;}
+.gblist .action a{padding:5px 5px 0; background:#000; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+.gblist .action a:hover{background:#FF4F4F;}
+.gblist li:hover .action{display:block;}
+.gblist li{float:left; width:85px; height:65px; padding:2px; background:#000; margin:0 5px 5px 0; position:relative;}
+
+/* index */
+.logo{margin:auto; text-align:center; padding-top:50px; padding-bottom:50px;}
+.alert{margin:auto; text-align:center; }
+
+
+/*#####################################################			SITE		#####################################################*/
+/*PAGINA PRINCIPAL*/
+/*RESETS*/
+.titulo{ font:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;  }
+
+
+/*HOME*/
+#paginacao{text-align:center;}
+
+
+
+/*FOOTER*/
+footer{padding-top:100px; text-align:center; margin:auto;}
+
+
+/*PAGINA-ADMIN-HOME*/
+
