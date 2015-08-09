@@ -60,178 +60,34 @@ if (!$readCat)
 #################################################### FIM DO CARROUSSEL#################################################?> 
 <section>
   <h3>Conhe&ccedil;a Nossas Categorias</h3>
+    <?php $exib = read('(SELECT DISTINCT cat_id FROM posts) posts');  foreach ($exib as $ex):
+		$exibCat = read('cat',"WHERE id = '$ex[cat_id]' ");	foreach ($exibCat as $cat): ?>
   <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab1" data-toggle="tab">Decora&ccedil;&otilde;es</a></li>
-        <li ><a href="#tab2" data-toggle="tab">Foto Livro</a></li>
-        <li ><a href="#tab3" data-toggle="tab">Foto Presentes</a></li>
-        <li ><a href="#tab4" data-toggle="tab">Impress&otilde;es Digitais</a></li>
-        <li ><a href="#tab5" data-toggle="tab">Lembran&ccedil;as e Convites</a></li>
-        <li ><a href="#tab6" data-toggle="tab">Pain&eacute;is de Madeiras</a></li>
-        <li ><a href="#tab7" data-toggle="tab">Tudo para sua Festa</a></li>
-        <li ><a href="#tab8" data-toggle="tab">Volta &agrave;s Aulas</a></li>
+        <li class="active"><a href="#tab1" data-toggle="tab"><?php echo $cat['nome']; ?></a></li>
    </ul>
     <div class="tab-content">
     	<div class="tab-pane active" id="tab1">
-        	<p> lista de Decora&ccedil;&otilde;es</p>
-   <!-- AQUI TERÁ UM LOOP DE PRODUTOS DECORAÇÕES --->         
+        <?php echo '<p><a title="'.$cat['nome'].' | '.SITENAME.'" href="'.BASE.'/produtos/'.$cat['url'].'">'.$cat['nome'].'</a></p>'; ?>       
+   <!-- AQUI TERÁ UM LOOP DE PRODUTOS --->         
             <ul class="thumbnails">
-            <?php for($i=1; $i < 10; $i++){ echo ' 
-                      
- 		 <li class="span4">
-    		<div class="thumbnail">
-     			 <img src="http://placehold.it/300x200" alt="">
-     			 <h3>Rótulo para a miniatura</h3>
-     			 <p>Texto do thumbnail...</p>
-   			</div>
-  		</li>
-        
-         '; } ?>  		
-		</ul>      
-        </div>
-            <!-- ONDE SE ENCERRA O LOOP DE DECORAÇÕES-->  
-        <div class="tab-pane" id="tab2">
-        	<p> lista de Foto Livro</p>
-              <!-- AQUI TERÁ UM LOOP DE FOTO LIVRO --->         
-            <ul class="thumbnails">
-            <?php for($i=1; $i < 10; $i++){ echo ' 
-                      
- 		 <li class="span4">
-    		<div class="thumbnail">
-     			 <img src="http://placehold.it/300x200" alt="">
-     			 <h3>Rótulo para a miniatura</h3>
-     			 <p>Texto do thumbnail...</p>
-   			</div>
-  		</li>
-        
-         '; } ?>  		
-		</ul>
-     <!-- ONDE SE ENCERRA O LOOP DE FOTO LIVRO-->  
-        </div>
-        <div class="tab-pane" id="tab3">
-        	<p> lista de Foto Presentes</p>
-              <!-- AQUI TERÁ UM LOOP DE FOTO PRESENTES --->         
-            <ul class="thumbnails">
-            <?php for($i=1; $i < 10; $i++){ echo ' 
-                      
- 		 <li class="span4">
-    		<div class="thumbnail">
-     			 <img src="http://placehold.it/300x200" alt="">
-     			 <h3>Rótulo para a miniatura</h3>
-     			 <p>Texto do thumbnail...</p>
-   			</div>
-  		</li>
-        
-         '; } ?>  		
-		</ul>
-     <!-- ONDE SE ENCERRA O LOOP DE FOTO PRESENTES-->  
-        </div>
-        <div class="tab-pane" id="tab4">
-        	<p> lista de Impress&otilde;es Digitais</p>
-              <!-- AQUI TERÁ UM LOOP DE IMPRESSÕES DIGITAIS--->         
-            <ul class="thumbnails">
-            <?php for($i=1; $i < 10; $i++){ echo ' 
-                      
- 		 <li class="span4">
-    		<div class="thumbnail">
-     			 <img src="http://placehold.it/300x200" alt="">
-     			 <h3>Rótulo para a miniatura</h3>
-     			 <p>Texto do thumbnail...</p>
-   			</div>
-  		</li>
-        
-         '; } ?>  		
-		</ul>
-     <!-- ONDE SE ENCERRA O LOOP DE IMPRESSÕES DIGITAIS-->  
-        </div>
-        <div class="tab-pane" id="tab5">
-        	<p> lista de Lembran&ccedil;as e Convites</p>
-              <!-- AQUI TERÁ UM LOOP DE LEMBRANÇAS E CONVITES --->         
-            <ul class="thumbnails">
-            <?php for($i=1; $i < 10; $i++){ echo ' 
-                      
- 		 <li class="span4">
-    		<div class="thumbnail">
-     			 <img src="http://placehold.it/300x200" alt="">
-     			 <h3>Rótulo para a miniatura</h3>
-     			 <p>Texto do thumbnail...</p>
-   			</div>
-  		</li>
-        
-         '; } ?>  		
-		</ul>
-     <!-- ONDE SE ENCERRA O LOOP DE LEMBRANÇAS E CONVITE-->  
-        </div>
-        <div class="tab-pane" id="tab6">
-        	<p> lista de Pain&eacute;is de Madeiras</p>
-              <!-- AQUI TERÁ UM LOOP DE PAINÉIS DE MADEIRA --->         
-            <ul class="thumbnails">
-            <?php for($i=1; $i < 10; $i++){ echo ' 
-                      
- 		 <li class="span4">
-    		<div class="thumbnail">
-     			 <img src="http://placehold.it/300x200" alt="">
-     			 <h3>Rótulo para a miniatura</h3>
-     			 <p>Texto do thumbnail...</p>
-   			</div>
-  		</li>
-        
-         '; } ?>  		
-		</ul>
-     <!-- ONDE SE ENCERRA O LOOP DE PAINEIS DE MADEIRA-->  
-        </div>
-        <div class="tab-pane" id="tab7">
-        	<p> lista de Tudo para sua Festa</p>
-              <!-- AQUI TERÁ UM LOOP DE TUDO PARA SUA FESTA --->         
-            <ul class="thumbnails">
-            <?php for($i=1; $i < 10; $i++){ echo ' 
-                      
- 		 <li class="span4">
-    		<div class="thumbnail">
-     			 <img src="http://placehold.it/300x200" alt="">
-     			 <h3>Rótulo para a miniatura</h3>
-     			 <p>Texto do thumbnail...</p>
-   			</div>
-  		</li>
-        
-         '; } ?>  		
-		</ul>
-     <!-- ONDE SE ENCERRA O LOOP DE TUDO PARA SUA FESTA-->  
-        </div>
-        <div class="tab-pane" id="tab8">
-        	<p> lista de Volta &agrave;s Aulas</p>
-              <!-- AQUI TERÁ UM LOOP DE VOLTA AS AULAS --->         
-            <ul class="thumbnails">
-            <?php for($i=1; $i < 10; $i++){ echo ' 
-                      
- 		 <li class="span4">
-    		<div class="thumbnail">
-     			 <img src="http://placehold.it/300x200" alt="">
-     			 <h3>Rótulo para a miniatura</h3>
-     			 <p>Texto do thumbnail...</p>
-   			</div>
-  		</li>
-        
-         '; } ?>  		
-		</ul>
-     <!--ONDE SE ENCERRA O LOOP DE VOLTA AS AULAS-->  
-        </div>
-	</div>
+          <?php
+			   $postList = read('posts', "WHERE cat_id = '$ex[cat_id]' AND status = '1' ORDER BY visitas LIMIT 3");  foreach ($postList as $list): 
+		echo '<li class="span4">';
+    	echo'<div class="thumbnail">';
+		 getThumb($list['thumb'],$list['titulo'],$list['titulo'],'250', '200', '', '', '#','r', BASE.'/uploads/'.$list['thumb'],''); 
+		echo '<h3>'.lmWord($list['titulo'],50).'</h3>';             
+               echo '<p>'.lmWord($list['content'],50).'</p>';		
+			   echo '<a title="Ver mais de '.$list['titulo'].'" href="'.BASE.'/produto/'.$list['url'].'" class="btn btn-large btn-block btn-primary">saiba mais ... </a>';
+		
+		echo '</div>';
+  		echo '</li>';
+		endforeach;
+		echo '</ul>';
+  		echo '</div>';
+		endforeach;
+		endforeach;
+			 ?>
+            <!-- ONDE SE ENCERRA O LOOP -->
 </section>
-<section id="paginacao">
-    <div class="page-header">
-        <h5>paginação</h5>
-    </div>
-    <div class="pagination">
-        <ul>
-            <li><a href=""> < </a></li>
-            <li><a href=""> 1 </a></li>
-            <li><a href=""> 2 </a></li>
-            <li><a href=""> 3 </a></li>
-            <li><a href=""> > </a></li>
-        </ul>
-    </div>
-</section>                    		
-
-	
   <?php setArq('tpl/footer'); ?>
   
